@@ -9,17 +9,16 @@ import SwiftUI
 
 struct OnBoardingView: View {
     // MARK: - PROPERTIES
-    
+    var fruits:[Fruit] = fruitsData
     
     // MARK: - BODY
     
     var body: some View {
     
         TabView {
-            ForEach(0..<5) { item in
-                FruitCardView()
+            ForEach(fruits[0...5]) { item in
+                FruitCardView(fruit: item)
             }//: LOOP
-            FruitCardView()
         }//: TAB
         .tabViewStyle(PageTabViewStyle())
         .padding(.vertical,20)
@@ -30,7 +29,8 @@ struct OnBoardingView: View {
 // MARK: - PREVIEW
 struct OnBoardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingView()
+        OnBoardingView(fruits: fruitsData)
+            .previewDevice("iPhone 17 Pro")
     }
 }
 

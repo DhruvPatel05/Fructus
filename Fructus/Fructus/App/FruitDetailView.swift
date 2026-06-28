@@ -14,7 +14,17 @@ struct FruitDetailView:View {
     // MARK: - BODY
     
     var body: some View {
-        Text(fruit.title)
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .center,spacing:20) {
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text(fruit.title)
+                    }//: VSTACK
+                    .padding(.horizontal,20)
+                    .frame(maxWidth:640,alignment: .center)
+                }//: VSTACK
+            }//: SCROLLVIEW
+        }// : NAVIGATION
     }
 }
 

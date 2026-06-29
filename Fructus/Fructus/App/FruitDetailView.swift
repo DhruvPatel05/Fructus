@@ -35,8 +35,10 @@ struct FruitDetailView:View {
                         Text("Learn more about \(fruit.title)".uppercased())
                             .fontWeight(.bold)
                             .foregroundColor(fruit.gradientColors[1])
-                        //: DESCRIPTION
                         
+                        //: DESCRIPTION
+                        Text(fruit.description)
+                            .multilineTextAlignment(.leading)
                         
                         //: LINK
                         
